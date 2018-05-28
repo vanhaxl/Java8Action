@@ -121,7 +121,9 @@ public class PuttingIntoPractice {
 
 		// Query 6: Update all transactions so that the traders from Milan are set to
 		// Cambridge.
-
+		transactions.stream().map(Transaction::getTrader).filter(trader -> trader.getCity().equals("Milan"))
+				.forEach(trader -> trader.setCity("Cambridge"));
+		
 		// Query 7: What's the highest value in all the transactions?
 		// normal
 		int max = Integer.MIN_VALUE;
